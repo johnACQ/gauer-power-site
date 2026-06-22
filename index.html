@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gauer Power | Electricians in Cranbrook & the Kootenays</title>
+<style>
+  :root{ --gold:#C8A24B; --gold-2:#e0bd66; --ink:#0E0E0E; --ink-2:#171717; --line:#2a2a2a; --txt:#f3f3f3; --mut:#b6b6b6; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--ink);color:var(--txt);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(14,14,14,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+  .brand .mark{width:34px;height:34px;border-radius:7px;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-weight:900}
+  .brand b{color:var(--gold)}
+  nav ul{display:flex;gap:22px;list-style:none;font-size:14px;color:var(--mut)}
+  nav a{color:var(--mut);text-decoration:none}nav a:hover{color:var(--gold)}
+  .callbtn{background:var(--gold);color:var(--ink);font-weight:800;padding:11px 18px;border-radius:9px;text-decoration:none;font-size:15px}
+  @media(max-width:860px){nav ul{display:none}}
+  /* hero */
+  .hero{position:relative;padding:78px 0 64px;background:radial-gradient(1100px 500px at 70% -10%,rgba(200,162,75,.16),transparent 60%),linear-gradient(180deg,#0c0c0c,#0E0E0E)}
+  .eyebrow{color:var(--gold);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase}
+  h1{font-size:clamp(34px,5.4vw,58px);line-height:1.04;margin:14px 0 16px;font-weight:850;letter-spacing:-.5px}
+  .sub{font-size:clamp(17px,2.2vw,21px);color:var(--mut);max-width:680px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 18px}
+  .btn-primary{background:var(--gold);color:var(--ink);font-weight:800;padding:16px 26px;border-radius:11px;text-decoration:none;font-size:18px}
+  .btn-ghost{border:1px solid var(--gold);color:var(--gold);font-weight:700;padding:16px 24px;border-radius:11px;text-decoration:none;font-size:17px}
+  .trustline{color:var(--mut);font-size:15px;margin-top:8px}.trustline b{color:var(--txt)}
+  /* problem strip */
+  .strip{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0}
+  .strip p{font-size:clamp(18px,2.4vw,24px);font-weight:600;max-width:880px}
+  .strip .em{color:var(--gold)}
+  /* diff bullets */
+  .diff{padding:56px 0}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:780px){.grid3{grid-template-columns:1fr}}
+  .card{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:26px}
+  .card h3{color:var(--gold);font-size:19px;margin-bottom:8px}
+  .card p{color:var(--mut);font-size:15px}
+  /* services */
+  .services{padding:20px 0 60px}
+  .sec-h{text-align:center;margin-bottom:34px}
+  .sec-h h2{font-size:clamp(26px,3.6vw,38px);font-weight:800}
+  .sec-h span{color:var(--gold)}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:980px){.grid4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.grid4{grid-template-columns:1fr}}
+  .svc{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .svc img{width:100%;height:150px;object-fit:cover;display:block;filter:saturate(1.05)}
+  .svc .b{padding:18px}
+  .svc h4{color:var(--txt);font-size:17px;margin-bottom:6px}
+  .svc p{color:var(--mut);font-size:13.5px}
+  /* proof + area */
+  .proof{padding:54px 0;background:var(--ink-2);border-top:1px solid var(--line)}
+  .proof .grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+  @media(max-width:820px){.proof .grid2{grid-template-columns:1fr}}
+  .proof img{width:100%;border-radius:14px;border:1px solid var(--line)}
+  .badges{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
+  .badge{border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:700}
+  /* form */
+  .cta-final{padding:64px 0}
+  .form-card{background:var(--ink-2);border:1px solid var(--gold);border-radius:18px;padding:32px;max-width:560px;margin:26px auto 0}
+  .form-card h3{font-size:24px;margin-bottom:6px}
+  .form-card p.s{color:var(--mut);margin-bottom:18px}
+  .form-card input,.form-card textarea{width:100%;background:#101010;border:1px solid var(--line);border-radius:10px;color:var(--txt);padding:13px 14px;margin-bottom:12px;font-size:15px}
+  .form-card button{width:100%;background:var(--gold);color:var(--ink);font-weight:850;border:0;border-radius:11px;padding:16px;font-size:18px;cursor:pointer}
+  .consent{color:#8a8a8a;font-size:12px;margin-top:12px;text-align:center}
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px;text-align:center}
+  .stickymob{display:none}
+  @media(max-width:860px){.stickymob{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--gold);color:var(--ink);font-weight:850;justify-content:center;gap:8px;padding:15px;text-decoration:none;font-size:18px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a href="index.html" class="brand" style="text-decoration:none"><img src="gauer_logo.png" alt="Gauer Power Ltd." style="height:36px;width:auto;display:block"></a>
+  <nav><ul>
+    <li><a href="gauer_residential.html">Residential</a></li><li><a href="gauer_commercial.html">Commercial</a></li>
+    <li><a href="gauer_ev.html">EV Chargers</a></li><li><a href="gauer_panel.html">Panel Upgrades</a></li>
+    <li><a href="gauer_service_areas.html">Service Areas</a></li><li><a href="gauer_about.html">About</a></li><li><a href="gauer_contact.html">Contact</a></li>
+  </ul></nav>
+  <a class="callbtn" href="tel:+12509089208">📞 (250) 908-9208</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="eyebrow">Licensed Electricians · Cranbrook, BC & the Kootenays</div>
+  <h1>The Electrician That<br>Actually Shows Up</h1>
+  <p class="sub">Need your electrical done right? From a flickering panel to a full EV charger install, you get a licensed, insured local crew that picks up the phone. Residential and commercial across the Kootenays and Southern Alberta.</p>
+  <div class="cta-row">
+    <a class="btn-primary" href="tel:+12509089208">📞 Call (250) 908-9208</a>
+    <a class="btn-ghost" href="#quote">Get a Free Quote</a>
+  </div>
+  <div class="trustline"><b>ECAA-licensed electrical contractor</b> · Fully insured · Local crew of 14</div>
+</div></section>
+
+<section class="strip"><div class="wrap">
+  <p>Tired of trades that don't call back, run late, or vanish once they've got your deposit? When you want it done right and done when we said, <span class="em">Gauer Power is the crew you call.</span></p>
+</div></section>
+
+<section class="diff"><div class="wrap grid3">
+  <div class="card"><h3>You get a real crew on the phone</h3><p>Local, not a call centre, not voicemail.</p></div>
+  <div class="card"><h3>A clear quote before any work starts</h3><p>No surprise line items.</p></div>
+  <div class="card"><h3>Licensed and insured, every job</h3><p>Your home or business is to code and it's covered.</p></div>
+</div></section>
+
+<section class="services"><div class="wrap">
+  <div class="sec-h"><h2>What We <span>Do</span></h2></div>
+  <div class="grid4">
+    <div class="svc"><img src="GauerPower-Residential.png" alt="Residential"><div class="b"><h4>Residential</h4><p>Wiring, panel upgrades, lighting, troubleshooting, EV chargers.</p></div></div>
+    <div class="svc"><img src="GauerPower-Commercial.png" alt="Commercial"><div class="b"><h4>Commercial</h4><p>Lighting installs, tenant improvements, code upgrades, project management.</p></div></div>
+    <div class="svc"><img src="GauerPower-EV-Charger.png" alt="EV Chargers"><div class="b"><h4>EV Charger Installs</h4><p>Home and workplace chargers, wired right the first time.</p></div></div>
+    <div class="svc"><img src="GauerPower-Panel-Upgrade.png" alt="Panel Upgrades"><div class="b"><h4>Panel Upgrades</h4><p>Older home or growing load? Upgraded safely and to code.</p></div></div>
+  </div>
+</div></section>
+
+<section class="proof"><div class="wrap grid2">
+  <div>
+    <div class="sec-h" style="text-align:left"><h2>A Local Crew You Can <span>Trust</span></h2></div>
+    <p style="color:var(--mut);font-size:16px">A 14-person crew with decades of experience, serving the Kootenays since 2023. We do the job right and we don't disappear.</p>
+    <div class="badges">
+      <span class="badge">Licensed & Insured</span><span class="badge">Residential · Commercial · Industrial</span>
+      <span class="badge">14-Person Local Crew</span><span class="badge">Decades of Experience</span>
+    </div>
+    <blockquote style="border-left:3px solid var(--gold);padding:8px 0 8px 16px;margin:18px 0 0;color:var(--txt);font-size:15.5px;font-style:italic">"Aaron Gauer is excellent. Professional, friendly, helpful, and goes out of his way to satisfy. Best prices and top notch electricians. Highly recommend."<span style="display:block;font-style:normal;color:var(--gold);font-size:13px;margin-top:8px">★★★★★ &nbsp;· S&amp;HC, customer</span></blockquote>
+    <p style="color:#7d7d7d;font-size:13px;margin-top:16px">★ Google reviews widget goes here (populated by the review engine; no number shown until it's real).</p>
+  </div>
+  <img src="gauer_vans.jpeg" alt="Gauer Power trucks and crew">
+</div></section>
+
+<section class="cta-final" id="quote"><div class="wrap">
+  <div class="form-card" id="formCard">
+    <h3>Need an electrician you can count on?</h3>
+    <p class="s">Tell us what's going on and you'll get a straight answer and a fair quote.</p>
+    <form id="quoteForm">
+      <input type="text" name="Name" placeholder="Your name" required>
+      <input type="tel" name="Phone" placeholder="Phone number" required>
+      <input type="text" name="Town" placeholder="Town" required>
+      <textarea name="Job" rows="3" placeholder="What do you need done?"></textarea>
+      <button type="submit" id="quoteBtn">Get My Free Quote</button>
+    </form>
+    <p class="consent">By submitting, you agree to receive text messages from Gauer Power about your enquiry. Message and data rates may apply. Reply STOP to opt out.</p>
+  </div>
+  <div class="form-card" id="thanksCard" style="display:none;text-align:center">
+    <h3 style="color:var(--gold)">Got it. We'll be in touch.</h3>
+    <p class="s" style="margin-bottom:0">Thanks for reaching out to Gauer Power. We'll call you back shortly. Need it sorted now? Tap to call <a href="tel:+12509089208" style="color:var(--gold);font-weight:800">(250) 908-9208</a>.</p>
+  </div>
+  <script>
+  (function(){
+    var f=document.getElementById('quoteForm'),btn=document.getElementById('quoteBtn');
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      btn.disabled=true;btn.textContent='Sending...';
+      var data={};new FormData(f).forEach(function(v,k){data[k]=v});
+      data._subject='New Gauer Power quote request';
+      fetch('https://formsubmit.co/ajax/john@apexacq.co',{
+        method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(data)
+      }).then(function(r){return r.json()}).then(function(){
+        document.getElementById('formCard').style.display='none';
+        document.getElementById('thanksCard').style.display='block';
+      }).catch(function(){
+        btn.disabled=false;btn.textContent='Get My Free Quote';
+        alert('Something went wrong. Please call us at (250) 908-9208.');
+      });
+    });
+  })();
+  </script>
+</div></section>
+
+<footer><div class="wrap">
+  Gauer Power · Licensed & insured electrical contractor · Cranbrook, BC &amp; the Kootenays · <a href="tel:+12509089208" style="color:var(--gold)">(250) 908-9208</a>
+</div></footer>
+
+<a class="stickymob" href="tel:+12509089208">📞 Call (250) 908-9208</a>
+</body>
+</html>
