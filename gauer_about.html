@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Gauer Power | Local Electricians in Cranbrook, BC</title>
+<meta name="description" content="Gauer Power is a Cranbrook based electrical contractor. A 14 person local crew, Technical Safety BC licensed, serving the Kootenays since 2023.">
+<link rel="canonical" href="https://johnacq.github.io/gauer-power-site/gauer_about.html">
+<link rel="icon" href="gauer_logo.png">
+<meta name="theme-color" content="#0E0E0E">
+<meta property="og:title" content="About Gauer Power | Local Electricians in Cranbrook, BC">
+<meta property="og:description" content="Gauer Power is a Cranbrook based electrical contractor. A 14 person local crew, Technical Safety BC licensed, serving the Kootenays since 2023.">
+<meta property="og:url" content="https://johnacq.github.io/gauer-power-site/gauer_about.html">
+<meta property="og:image" content="https://johnacq.github.io/gauer-power-site/gauer_vans.jpeg">
+<meta property="og:type" content="website">
 <link rel="stylesheet" href="gauer_site.css">
 </head>
 <body>
@@ -14,6 +23,9 @@
     <li><a href="gauer_commercial.html">Commercial</a></li>
     <li><a href="gauer_ev.html">EV Chargers</a></li>
     <li><a href="gauer_panel.html">Panel Upgrades</a></li>
+    <li><a href="gauer_service_areas.html">Service Areas</a></li>
+    <li><a href="gauer_about.html" class="active">About</a></li>
+    <li><a href="gauer_contact.html">Contact</a></li>
   </ul></nav>
   <a class="callbtn" href="tel:+12509089208">📞 (250) 908-9208</a>
 </div></header>
@@ -39,7 +51,7 @@
       <div class="card"><h4>We show up</h4><p>On time, every time.</p></div>
     </div>
   </div>
-  <img src="gauer_vans.jpeg" alt="Gauer Power crew and trucks">
+  <img src="gauer_vans.jpeg" alt="Gauer Power crew and trucks" width="1400" height="1050" loading="lazy">
 </div></section>
 
 <section class="sec" style="padding-top:0"><div class="wrap">
@@ -50,13 +62,18 @@
   <div class="form-card">
     <h3>Want a crew you can count on?</h3>
     <p class="s">Tell us what's going on and you'll get a straight answer and a fair quote.</p>
-    <input type="text" placeholder="Your name"><input type="tel" placeholder="Phone number">
-    <input type="text" placeholder="Town"><textarea rows="3" placeholder="What do you need done?"></textarea>
-    <button>Get My Free Quote</button>
-    <p class="consent">By submitting, you agree to receive text messages from Gauer Power about your enquiry. Message and data rates may apply. Reply STOP to opt out.</p>
+    <form id="quoteForm" data-subject="New Gauer Power quote request (About)">
+      <input type="text" name="Name" placeholder="Your name" required>
+      <input type="tel" name="Phone" placeholder="Phone number" required>
+      <input type="text" name="Town" placeholder="Town" required>
+      <textarea name="Job" rows="3" placeholder="What do you need done?"></textarea>
+      <button type="submit">Get My Free Quote</button>
+    </form>
+    <p class="consent">By submitting this form you agree to receive SMS text messages from Gauer Power Ltd. about your enquiry, appointment updates, and service reminders. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="privacy.html" style="color:var(--gold)">Privacy Policy</a> and <a href="sms-terms.html" style="color:var(--gold)">SMS Terms</a>.</p>
   </div>
 </div></section>
 
-<footer><div class="wrap">Gauer Power Ltd. · Technical Safety BC Licensed (LEL0212373) · Cranbrook, BC &amp; the Kootenays · <a href="privacy.html">Privacy Policy</a> · <a href="sms-terms.html">SMS Terms</a> · <a href="tel:+12509089208">(250) 908-9208</a></div></footer>
+<footer><div class="wrap">Gauer Power Ltd. · Technical Safety BC Licensed Contractor (LEL0212373) · 260 Industrial Road F, Cranbrook, BC · <a href="privacy.html">Privacy Policy</a> · <a href="sms-terms.html">SMS Terms</a> · <a href="tel:+12509089208">(250) 908-9208</a></div></footer>
 <a class="stickymob" href="tel:+12509089208">📞 Call (250) 908-9208</a>
+<script src="gauer_form.js"></script>
 </body></html>

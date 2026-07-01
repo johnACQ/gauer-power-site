@@ -10,8 +10,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(14,14,14,.92);backdrop-f
 nav ul{display:flex;gap:22px;list-style:none;font-size:14px;color:var(--mut)}
 nav a{color:var(--mut);text-decoration:none}nav a:hover{color:var(--gold)}
 nav a.active{color:var(--gold)}
-.callbtn{background:var(--gold);color:var(--ink);font-weight:800;padding:11px 18px;border-radius:9px;text-decoration:none;font-size:15px}
+.callbtn{background:var(--gold);color:var(--ink);font-weight:800;padding:11px 18px;border-radius:9px;text-decoration:none;font-size:15px;white-space:nowrap}
 @media(max-width:860px){nav ul{display:none}}
+@media(max-width:560px){.brand img{height:26px !important}.callbtn{font-size:13px;padding:9px 11px}}
 .phero{position:relative;padding:64px 0 48px;background:radial-gradient(1100px 500px at 70% -10%,rgba(200,162,75,.16),transparent 60%),linear-gradient(180deg,#0c0c0c,#0E0E0E)}
 .eyebrow{color:var(--gold);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase}
 h1{font-size:clamp(30px,4.6vw,46px);line-height:1.06;margin:13px 0 14px;font-weight:850;letter-spacing:-.4px}
