@@ -1,4 +1,11 @@
 (function(){
+  var RAIL='https://profound-truth-production-4190.up.railway.app';
+  // pageview beacon (counts only, no PII)
+  try{
+    navigator.sendBeacon(RAIL+'/webhook/gauer-pv',
+      JSON.stringify({page:location.pathname,ref:document.referrer||''}));
+  }catch(e){}
+
   var f=document.getElementById('quoteForm');if(!f)return;
   var btn=f.querySelector('button');if(btn){btn.setAttribute('data-label',btn.textContent);}
   f.addEventListener('submit',function(e){
@@ -7,6 +14,14 @@
     var data={};new FormData(f).forEach(function(v,k){data[k]=v});
     data._subject=f.getAttribute('data-subject')||'New Gauer Power quote request';
     data.Page=location.pathname;
+    // fast lane: instant Slack + SMS alert (fire-and-forget; email below is the backup)
+    try{
+      fetch(RAIL+'/webhook/gauer-lead',{
+        method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,
+        body:JSON.stringify({token:'gauer-bridge-lead-2026',name:data.Name,phone:data.Phone,
+          town:data.Town,job:data.Job,page:location.pathname})
+      }).catch(function(){});
+    }catch(e){}
     fetch('https://formsubmit.co/ajax/john@apexacq.co',{
       method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(data)
