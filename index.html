@@ -13,6 +13,9 @@
 <meta property="og:url" content="https://johnacq.github.io/gauer-power-site/">
 <meta property="og:image" content="https://johnacq.github.io/gauer-power-site/gauer_vans.jpeg">
 <meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,99 +34,134 @@
     "postalCode": "V1C 6N8",
     "addressCountry": "CA"
   },
-  "areaServed": ["Cranbrook BC","Kimberley BC","Fernie BC","Creston BC","Invermere BC","Sparwood BC","Elkford BC","Southern Alberta"]
+  "areaServed": ["Cranbrook BC","Kimberley BC","Fernie BC","Creston BC","Invermere BC","Sparwood BC","Elkford BC"]
 }
 </script>
 <style>
-  :root{ --gold:#C8A24B; --gold-2:#e0bd66; --ink:#0E0E0E; --ink-2:#171717; --line:#2a2a2a; --txt:#f3f3f3; --mut:#b6b6b6; }
+  :root{ --gold:#CA9C2D; --gold-2:#DFBF2E; --teal:#00A99D; --ink:#0E0E0E; --ink-2:#161616; --ink-3:#1c1c1c; --line:#2a2a2a; --txt:#f4f3ef; --mut:#b4b2aa; }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--ink);color:var(--txt);line-height:1.55;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+  h1,h2,h3,h4,.brand,.eyebrow,.callbtn,.btn-primary,.btn-ghost,.svc h4{font-family:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
   /* header */
-  header{position:sticky;top:0;z-index:50;background:rgba(14,14,14,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
-  .brand .mark{width:34px;height:34px;border-radius:7px;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-weight:900}
-  .brand b{color:var(--gold)}
-  nav ul{display:flex;gap:22px;list-style:none;font-size:14px;color:var(--mut)}
-  nav a{color:var(--mut);text-decoration:none}nav a:hover{color:var(--gold)}
-  .callbtn{background:var(--gold);color:var(--ink);font-weight:800;padding:11px 18px;border-radius:9px;text-decoration:none;font-size:15px;white-space:nowrap}
-  @media(max-width:860px){nav ul{display:none}}
-  @media(max-width:560px){.brand img{height:26px !important}.callbtn{font-size:13px;padding:9px 11px}}
+  header{position:sticky;top:0;z-index:50;background:rgba(14,14,14,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand img{height:36px;width:auto;display:block}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:14.5px;color:var(--mut);font-weight:600}
+  nav a{color:var(--mut);text-decoration:none;transition:color .15s}nav a:hover{color:var(--gold)}
+  .callbtn{background:var(--gold);color:var(--ink);font-weight:800;padding:12px 20px;border-radius:999px;text-decoration:none;font-size:15px;white-space:nowrap;box-shadow:0 0 0 1px rgba(223,189,102,.35),0 8px 24px -10px rgba(202,156,45,.6)}
+  @media(max-width:900px){nav ul{display:none}}
+  @media(max-width:560px){.brand img{height:28px}.callbtn{font-size:13px;padding:10px 13px}}
   /* hero */
-  .hero{position:relative;padding:78px 0 64px;background:radial-gradient(1100px 500px at 70% -10%,rgba(200,162,75,.16),transparent 60%),linear-gradient(180deg,#0c0c0c,#0E0E0E)}
-  .eyebrow{color:var(--gold);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase}
-  h1{font-size:clamp(34px,5.4vw,58px);line-height:1.04;margin:14px 0 16px;font-weight:850;letter-spacing:-.5px}
-  .sub{font-size:clamp(17px,2.2vw,21px);color:var(--mut);max-width:680px}
-  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 18px}
-  .btn-primary{background:var(--gold);color:var(--ink);font-weight:800;padding:16px 26px;border-radius:11px;text-decoration:none;font-size:18px}
-  .btn-ghost{border:1px solid var(--gold);color:var(--gold);font-weight:700;padding:16px 24px;border-radius:11px;text-decoration:none;font-size:17px}
-  .trustline{color:var(--mut);font-size:15px;margin-top:8px}.trustline b{color:var(--txt)}
+  .hero{position:relative;padding:72px 0 60px;background:radial-gradient(1200px 560px at 78% -12%,rgba(202,156,45,.18),transparent 58%),linear-gradient(180deg,#0b0b0b,#0E0E0E)}
+  .hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  @media(max-width:900px){.hero{padding:26px 0 44px}.hero .grid{grid-template-columns:1fr;gap:28px}}
+  .eyebrow{display:inline-block;color:var(--gold);font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(202,156,45,.4);border-radius:999px;padding:8px 15px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  h1{font-size:clamp(38px,6vw,72px);line-height:.98;margin:20px 0 18px;font-weight:900;letter-spacing:-1.5px}
+  h1 .g{color:var(--gold)}
+  .sub{font-size:clamp(17px,2.1vw,20px);color:var(--mut);max-width:600px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 22px}
+  .btn-primary{background:var(--gold);color:var(--ink);font-weight:800;padding:16px 28px;border-radius:999px;text-decoration:none;font-size:17px;box-shadow:0 12px 30px -12px rgba(202,156,45,.7)}
+  .btn-ghost{border:1px solid var(--line);color:var(--txt);font-weight:700;padding:16px 26px;border-radius:999px;text-decoration:none;font-size:16px}
+  .checks{display:flex;flex-wrap:wrap;gap:8px 22px;color:var(--mut);font-size:14.5px}
+  .checks span{white-space:nowrap}.checks b{color:var(--gold);font-weight:800}
+  .hero-media{position:relative}
+  .hero-media img{width:100%;height:100%;max-height:520px;object-fit:cover;border-radius:20px;border:1px solid var(--line);display:block}
+  .gbadge{position:absolute;top:-14px;left:-14px;background:#111;border:1px solid var(--line);border-radius:14px;padding:12px 16px;box-shadow:0 20px 40px -18px #000}
+  .gbadge .stars{color:var(--gold-2);font-size:15px;letter-spacing:2px}
+  .gbadge b{display:block;font-size:15px;margin-top:2px}
+  .hero-media .cap{position:absolute;left:18px;bottom:16px;right:18px}
+  .hero-media .cap b{font-family:"Archivo",sans-serif;font-size:18px;font-weight:800}
+  .hero-media .cap span{display:block;color:var(--mut);font-size:13px}
   /* problem strip */
-  .strip{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0}
-  .strip p{font-size:clamp(18px,2.4vw,24px);font-weight:600;max-width:880px}
+  .strip{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0}
+  .strip p{font-size:clamp(19px,2.5vw,27px);font-weight:600;max-width:920px;line-height:1.3}
   .strip .em{color:var(--gold)}
   /* diff bullets */
-  .diff{padding:56px 0}
+  .diff{padding:60px 0}
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  @media(max-width:780px){.grid3{grid-template-columns:1fr}}
-  .card{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:26px}
-  .card h3{color:var(--gold);font-size:19px;margin-bottom:8px}
+  @media(max-width:820px){.grid3{grid-template-columns:1fr}}
+  .card{background:linear-gradient(180deg,var(--ink-3),var(--ink-2));border:1px solid var(--line);border-radius:16px;padding:28px}
+  .card .ic{width:44px;height:44px;border-radius:11px;background:rgba(202,156,45,.14);color:var(--gold);display:grid;place-items:center;font-size:20px;margin-bottom:16px}
+  .card h3{font-size:19px;margin-bottom:8px;font-weight:800}
   .card p{color:var(--mut);font-size:15px}
   /* services */
-  .services{padding:20px 0 60px}
-  .sec-h{text-align:center;margin-bottom:34px}
-  .sec-h h2{font-size:clamp(26px,3.6vw,38px);font-weight:800}
-  .sec-h span{color:var(--gold)}
+  .services{padding:24px 0 64px}
+  .sec-h{margin-bottom:30px}
+  .sec-h h2{font-size:clamp(28px,3.8vw,42px);font-weight:900;letter-spacing:-.8px}
+  .sec-h h2 span{color:var(--gold)}
+  .sec-h.center{text-align:center}
   .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   @media(max-width:980px){.grid4{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:520px){.grid4{grid-template-columns:1fr}}
-  .svc{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-  .svc img{width:100%;height:150px;object-fit:cover;display:block;filter:saturate(1.05)}
-  .svc .b{padding:18px}
-  .svc h4{color:var(--txt);font-size:17px;margin-bottom:6px}
-  .svc p{color:var(--mut);font-size:13.5px}
-  /* proof + area */
-  .proof{padding:54px 0;background:var(--ink-2);border-top:1px solid var(--line)}
-  .proof .grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
-  @media(max-width:820px){.proof .grid2{grid-template-columns:1fr}}
-  .proof img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line)}
-  .badges{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
-  .badge{border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:700}
+  .svc{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:280px;display:block;text-decoration:none}
+  .svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .svc:hover img{transform:scale(1.06)}
+  .svc:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.05) 30%,rgba(10,10,10,.88))}
+  .svc .b{position:absolute;left:20px;right:20px;bottom:18px;z-index:2}
+  .svc h4{color:#fff;font-size:20px;font-weight:800;margin-bottom:4px}
+  .svc p{color:#ddd;font-size:13.5px;max-width:88%}
+  .svc .arw{position:absolute;right:16px;bottom:18px;z-index:2;width:38px;height:38px;border-radius:999px;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-weight:900}
+  /* proof + reviews */
+  .proof{padding:60px 0;background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .proof .grid2{display:grid;grid-template-columns:.92fr 1.08fr;gap:40px;align-items:center}
+  @media(max-width:860px){.proof .grid2{grid-template-columns:1fr}}
+  .proof img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line);display:block}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .badge{border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:8px 15px;font-size:13px;font-weight:700}
+  .rev{border-left:3px solid var(--gold);padding:6px 0 6px 18px;margin-top:16px;font-style:italic;font-size:15.5px}
+  .rev .who{display:block;font-style:normal;color:var(--gold);font-size:13px;margin-top:8px;font-weight:700}
+  .rated{color:#8f8d85;font-size:13px;margin-top:16px}
   /* form */
-  .cta-final{padding:64px 0}
-  .form-card{background:var(--ink-2);border:1px solid var(--gold);border-radius:18px;padding:32px;max-width:560px;margin:26px auto 0}
-  .form-card h3{font-size:24px;margin-bottom:6px}
-  .form-card p.s{color:var(--mut);margin-bottom:18px}
-  .form-card input,.form-card textarea{width:100%;background:#101010;border:1px solid var(--line);border-radius:10px;color:var(--txt);padding:13px 14px;margin-bottom:12px;font-size:15px}
-  .form-card button{width:100%;background:var(--gold);color:var(--ink);font-weight:850;border:0;border-radius:11px;padding:16px;font-size:18px;cursor:pointer}
-  .consent{color:#8a8a8a;font-size:12px;margin-top:12px;text-align:center}
+  .cta-final{padding:66px 0}
+  .form-card{background:linear-gradient(180deg,var(--ink-3),var(--ink-2));border:1px solid var(--gold);border-radius:20px;padding:34px;max-width:580px;margin:0 auto;box-shadow:0 30px 80px -40px rgba(202,156,45,.5)}
+  .form-card h3{font-size:25px;margin-bottom:6px;font-weight:900}
+  .form-card p.s{color:var(--mut);margin-bottom:20px}
+  .form-card input,.form-card textarea{width:100%;background:#0d0d0d;border:1px solid var(--line);border-radius:11px;color:var(--txt);padding:14px 15px;margin-bottom:12px;font-size:15px;font-family:inherit}
+  .form-card input:focus,.form-card textarea:focus{outline:none;border-color:var(--gold)}
+  .form-card button{width:100%;background:var(--gold);color:var(--ink);font-weight:900;border:0;border-radius:12px;padding:17px;font-size:18px;cursor:pointer;font-family:"Archivo",sans-serif}
+  .consent{color:#8a8a82;font-size:12px;margin-top:12px;text-align:center;line-height:1.5}
+  .consent a{color:var(--gold)}
   /* footer */
-  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px;text-align:center}
+  footer{padding:32px 0;color:var(--mut);font-size:14px;text-align:center}
+  footer a{color:var(--mut);text-decoration:none}footer a:hover{color:var(--gold)}
   .stickymob{display:none}
-  @media(max-width:860px){.stickymob{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--gold);color:var(--ink);font-weight:850;justify-content:center;gap:8px;padding:15px;text-decoration:none;font-size:18px}}
+  @media(max-width:900px){.stickymob{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--gold);color:var(--ink);font-weight:900;justify-content:center;gap:8px;padding:15px;text-decoration:none;font-size:18px;font-family:"Archivo",sans-serif}body{padding-bottom:58px}}
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
-  <a href="index.html" class="brand" style="text-decoration:none"><img src="gauer_logo.png" alt="Gauer Power Ltd." style="height:36px;width:auto;display:block"></a>
+  <a href="index.html" class="brand" style="text-decoration:none"><img src="gauer_logo.png" alt="Gauer Power Ltd."></a>
   <nav><ul>
     <li><a href="gauer_residential.html">Residential</a></li><li><a href="gauer_commercial.html">Commercial</a></li>
     <li><a href="gauer_ev.html">EV Chargers</a></li><li><a href="gauer_panel.html">Panel Upgrades</a></li>
     <li><a href="gauer_service_areas.html">Service Areas</a></li><li><a href="gauer_about.html">About</a></li><li><a href="gauer_contact.html">Contact</a></li>
   </ul></nav>
-  <a class="callbtn" href="tel:+12509089208">📞 (250) 908-9208</a>
+  <a class="callbtn" href="tel:+12509089208">&#9742; (250) 908-9208</a>
 </div></header>
 
-<section class="hero"><div class="wrap">
-  <div class="eyebrow">Technical Safety BC Licensed · Cranbrook, BC & the Kootenays</div>
-  <h1>The Electrician That<br>Actually Shows Up</h1>
-  <p class="sub">Need your electrical done right? From a flickering panel to a full EV charger install, you get a licensed, insured local crew that picks up the phone. Residential and commercial across the Kootenays and Southern Alberta.</p>
-  <div class="cta-row">
-    <a class="btn-primary" href="tel:+12509089208">📞 Call (250) 908-9208</a>
-    <a class="btn-ghost" href="#quote">Get a Free Quote</a>
+<section class="hero"><div class="wrap grid">
+  <div>
+    <div class="eyebrow">Technical Safety BC Licensed &middot; Cranbrook &amp; the Kootenays</div>
+    <h1>The Electrician That <span class="g">Actually</span> Shows Up</h1>
+    <p class="sub">Need your electrical done right? From a flickering panel to a full EV charger install, you get a licensed, insured local crew that picks up the phone. Residential and commercial across the Kootenays.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="tel:+12509089208">&#9742; Call (250) 908-9208</a>
+      <a class="btn-ghost" href="#quote">Get a Free Quote &rarr;</a>
+    </div>
+    <div class="checks">
+      <span><b>&#10003;</b> Licensed Contractor LEL0212373</span>
+      <span><b>&#10003;</b> Licensed Electrician</span>
+      <span><b>&#10003;</b> Fully insured</span>
+      <span><b>&#10003;</b> Crew of 14</span>
+    </div>
   </div>
-  <div class="trustline"><b>Technical Safety BC Licensed Contractor</b> (LEL0212373) · Master Electrician · Fully insured · Crew of 14</div>
+  <div class="hero-media">
+    <div class="gbadge"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><b>Rated 5.0 on Google</b></div>
+    <img src="gauer_vans.jpeg" alt="Gauer Power trucks and crew in the Kootenays" width="1100" height="825" fetchpriority="high">
+    <div class="cap"><b>Serving the Kootenays</b><span>Since 2023 &middot; 14-person local crew</span></div>
+  </div>
 </div></section>
 
 <section class="strip"><div class="wrap">
@@ -131,37 +169,38 @@
 </div></section>
 
 <section class="diff"><div class="wrap grid3">
-  <div class="card"><h3>You get a real crew on the phone</h3><p>Local, not a call centre, not voicemail.</p></div>
-  <div class="card"><h3>A clear quote before any work starts</h3><p>No surprise line items.</p></div>
-  <div class="card"><h3>Licensed and insured, every job</h3><p>Your home or business is to code and it's covered.</p></div>
+  <div class="card"><div class="ic">&#9742;</div><h3>A real crew on the phone</h3><p>Local, not a call centre, not voicemail. You get a straight answer from the people doing the work.</p></div>
+  <div class="card"><div class="ic">&#10003;</div><h3>A clear quote up front</h3><p>A clear quote before any work starts. No surprise line items, no games with your deposit.</p></div>
+  <div class="card"><div class="ic">&#9889;</div><h3>Licensed &amp; insured, every job</h3><p>Your home or business is done to code and it's covered, on every single job we take.</p></div>
 </div></section>
 
 <section class="services"><div class="wrap">
-  <div class="sec-h"><h2>What We <span>Do</span></h2></div>
+  <div class="sec-h center"><h2>What We <span>Do</span></h2></div>
   <div class="grid4">
-    <div class="svc"><a href="gauer_residential.html"><img src="gauer_job_residential.jpg" alt="New construction electrical wiring by Gauer Power" width="800" height="600" loading="lazy"></a><div class="b"><h4><a href="gauer_residential.html" style="color:inherit;text-decoration:none">Residential</a></h4><p>Wiring, panel upgrades, lighting, troubleshooting, EV chargers.</p></div></div>
-    <div class="svc"><a href="gauer_commercial.html"><img src="gauer_job_commercial.jpg" alt="Commercial electrical rough-in by Gauer Power" width="800" height="600" loading="lazy"></a><div class="b"><h4><a href="gauer_commercial.html" style="color:inherit;text-decoration:none">Commercial</a></h4><p>Lighting installs, tenant improvements, code upgrades, project management.</p></div></div>
-    <div class="svc"><a href="gauer_ev.html"><img src="gauer_job_ev.jpg" alt="Underground electrical conduit run by Gauer Power" width="800" height="600" loading="lazy"></a><div class="b"><h4><a href="gauer_ev.html" style="color:inherit;text-decoration:none">EV Charger Installs</a></h4><p>Home and workplace chargers, wired right the first time.</p></div></div>
-    <div class="svc"><a href="gauer_panel.html"><img src="gauer_job_panel.jpg" alt="Electrical service and meter installation by Gauer Power" width="480" height="360" loading="lazy"></a><div class="b"><h4><a href="gauer_panel.html" style="color:inherit;text-decoration:none">Panel Upgrades</a></h4><p>Older home or growing load? Upgraded safely and to code.</p></div></div>
+    <a class="svc" href="gauer_residential.html"><img src="gauer_job_residential.jpg" alt="New construction electrical wiring by Gauer Power" loading="lazy"><div class="b"><h4>Residential</h4><p>Wiring, panel upgrades, lighting, troubleshooting.</p></div><span class="arw">&rarr;</span></a>
+    <a class="svc" href="gauer_commercial.html"><img src="gauer_job_commercial.jpg" alt="Commercial electrical rough-in by Gauer Power" loading="lazy"><div class="b"><h4>Commercial</h4><p>Lighting, tenant improvements, code upgrades.</p></div><span class="arw">&rarr;</span></a>
+    <a class="svc" href="gauer_ev.html"><img src="gauer_job_ev.jpg" alt="Underground electrical conduit run by Gauer Power" loading="lazy"><div class="b"><h4>EV Charger Installs</h4><p>Home and workplace chargers, wired right the first time.</p></div><span class="arw">&rarr;</span></a>
+    <a class="svc" href="gauer_panel.html"><img src="gauer_job_panel.jpg" alt="Electrical service and meter installation by Gauer Power" loading="lazy"><div class="b"><h4>Panel Upgrades</h4><p>Older home or growing load? Upgraded safely and to code.</p></div><span class="arw">&rarr;</span></a>
   </div>
 </div></section>
 
 <section class="proof"><div class="wrap grid2">
+  <img src="gauer_aaron.jpg" alt="Aaron Gauer, owner of Gauer Power Ltd." width="800" height="800" loading="lazy">
   <div>
-    <div class="sec-h" style="text-align:left"><h2>A Local Crew You Can <span>Trust</span></h2></div>
-    <p style="color:var(--mut);font-size:16px">A 14-person crew with decades of experience, serving the Kootenays since 2023. We do the job right and we don't disappear.</p>
+    <div class="sec-h"><h2>A Local Crew You Can <span>Trust</span></h2></div>
+    <p style="color:var(--mut);font-size:16px">A 14-person crew with decades of combined experience, serving the Kootenays since 2023. We do the job right and we don't disappear.</p>
     <div class="badges">
-      <span class="badge">Technical Safety BC · LEL0212373</span><span class="badge">Residential · Commercial · Industrial</span>
-      <span class="badge">14-Person Local Crew</span><span class="badge">Decades of Experience</span>
+      <span class="badge">Technical Safety BC &middot; LEL0212373</span><span class="badge">Residential &middot; Commercial &middot; Industrial</span>
+      <span class="badge">14-Person Local Crew</span>
     </div>
-    <blockquote style="border-left:3px solid var(--gold);padding:8px 0 8px 16px;margin:18px 0 0;color:var(--txt);font-size:15.5px;font-style:italic">"Aaron Gauer is excellent. Professional, friendly, helpful, and goes out of his way to satisfy. Best prices and top notch electricians. Highly recommend."<span style="display:block;font-style:normal;color:var(--gold);font-size:13px;margin-top:8px">★★★★★ &nbsp;· S&amp;HC, customer</span></blockquote>
-    <blockquote style="border-left:3px solid var(--gold);padding:8px 0 8px 16px;margin:14px 0 0;color:var(--txt);font-size:14.5px;font-style:italic">"Great work whoever was working at FR in Sparwood."<span style="display:block;font-style:normal;color:var(--gold);font-size:13px;margin-top:8px">★★★★★ &nbsp;· Johnny Blackwood, Google Local Guide</span></blockquote>
-    <p style="color:#8a8a8a;font-size:13px;margin-top:14px">Rated 5.0 on Google. Real reviews from real customers in the Kootenays.</p>
+    <blockquote class="rev">"Aaron Gauer is excellent. Professional, friendly, helpful, and goes out of his way to satisfy. Best prices and top notch electricians. Highly recommend."<span class="who">&#9733;&#9733;&#9733;&#9733;&#9733; &nbsp;&middot; S&amp;HC, customer</span></blockquote>
+    <blockquote class="rev">"Great work whoever was working at FR in Sparwood."<span class="who">&#9733;&#9733;&#9733;&#9733;&#9733; &nbsp;&middot; Johnny Blackwood, Google Local Guide</span></blockquote>
+    <p class="rated">Rated 5.0 on Google. Real reviews from real customers in the Kootenays.</p>
   </div>
-  <img src="gauer_vans.jpeg" alt="Gauer Power trucks and crew" width="1100" height="825" loading="lazy">
 </div></section>
 
 <section class="cta-final" id="quote"><div class="wrap">
+  <div class="sec-h center"><h2>Get Your <span>Free Quote</span></h2></div>
   <div class="form-card" id="formCard">
     <h3>Need an electrician you can count on?</h3>
     <p class="s">Tell us what's going on and you'll get a straight answer and a fair quote.</p>
@@ -172,15 +211,15 @@
       <textarea name="Job" rows="3" placeholder="What do you need done?"></textarea>
       <button type="submit" id="quoteBtn">Get My Free Quote</button>
     </form>
-    <p class="consent">By submitting this form you agree to receive SMS text messages from Gauer Power Ltd. about your enquiry, appointment updates, and service reminders. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="privacy.html" style="color:var(--gold)">Privacy Policy</a> and <a href="sms-terms.html" style="color:var(--gold)">SMS Terms</a>.</p>
+    <p class="consent">By submitting this form you agree to receive SMS text messages from Gauer Power Ltd. about your enquiry, appointment updates, and service reminders. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="privacy.html">Privacy Policy</a> and <a href="sms-terms.html">SMS Terms</a>.</p>
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  Gauer Power Ltd. · Technical Safety BC Licensed Contractor (LEL0212373) · 260 Industrial Road F, Cranbrook, BC · <a href="privacy.html">Privacy Policy</a> · <a href="sms-terms.html">SMS Terms</a> · <a href="tel:+12509089208" style="color:var(--gold)">(250) 908-9208</a>
+  Gauer Power Ltd. &middot; Technical Safety BC Licensed Contractor (LEL0212373) &middot; 260 Industrial Road F, Cranbrook, BC &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="sms-terms.html">SMS Terms</a> &middot; <a href="tel:+12509089208" style="color:var(--gold)">(250) 908-9208</a>
 </div></footer>
 
-<a class="stickymob" href="tel:+12509089208">📞 Call (250) 908-9208</a>
+<a class="stickymob" href="tel:+12509089208">&#9742; Call (250) 908-9208</a>
 <script src="gauer_form.js"></script>
 </body>
 </html>
