@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJPK9ZH9SC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VJPK9ZH9SC');
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gauer Power | Electricians in Cranbrook & the Kootenays</title>
@@ -52,7 +61,13 @@
   nav a{color:var(--mut);text-decoration:none;transition:color .15s}nav a:hover{color:var(--gold)}
   .callbtn{background:var(--gold);color:var(--ink);font-weight:800;padding:12px 20px;border-radius:999px;text-decoration:none;font-size:15px;white-space:nowrap;box-shadow:0 0 0 1px rgba(223,189,102,.35),0 8px 24px -10px rgba(202,156,45,.6)}
   @media(max-width:900px){nav ul{display:none}}
+  /* NOTE: this page carries its own copy of the design system instead of
+     gauer_site.css. Header/responsive rules below are duplicated there and
+     must be changed in both places until the two are consolidated. */
+  .nav{gap:12px}.brand{min-width:0;flex:0 1 auto}.brand img{max-width:100%}.callbtn{flex:0 0 auto}
   @media(max-width:560px){.brand img{height:28px}.callbtn{font-size:13px;padding:10px 13px}}
+  @media(max-width:400px){.brand img{height:24px}.callbtn{font-size:12.5px;padding:10px 12px}}
+  @media(max-width:360px){.wrap{padding:0 14px}.brand img{height:22px}.callbtn{font-size:12px;padding:9px 11px}}
   /* hero */
   .hero{position:relative;padding:72px 0 60px;background:radial-gradient(1200px 560px at 78% -12%,rgba(202,156,45,.18),transparent 58%),linear-gradient(180deg,#0b0b0b,#0E0E0E)}
   .hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
@@ -204,7 +219,7 @@
   <div class="form-card" id="formCard">
     <h3>Need an electrician you can count on?</h3>
     <p class="s">Tell us what's going on and you'll get a straight answer and a fair quote.</p>
-    <form id="quoteForm" data-subject="New Gauer Power quote request (Home page)">
+    <form id="quoteForm" class="quote-form" data-subject="New Gauer Power quote request (Home page)">
       <input type="text" name="Name" placeholder="Your name" required>
       <input type="tel" name="Phone" placeholder="Phone number" required>
       <input type="text" name="Town" placeholder="Town" required>

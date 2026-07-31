@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VJPK9ZH9SC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VJPK9ZH9SC');
+</script>
+
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Gauer Power | Local Electricians in Cranbrook, BC</title>
 <meta name="description" content="Gauer Power is a Cranbrook based electrical contractor. A 14 person local crew, Technical Safety BC licensed, serving the Kootenays since 2023.">
@@ -16,7 +25,7 @@
 </head>
 <body>
 <header><div class="wrap nav">
-  <a href="index.html" class="brand" style="text-decoration:none"><img src="gauer_logo.png" alt="Gauer Power Ltd." style="height:36px;width:auto;display:block"></a>
+  <a href="index.html" class="brand" style="text-decoration:none"><img src="gauer_logo.png" alt="Gauer Power Ltd."></a>
   <nav><ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="gauer_residential.html">Residential</a></li>
@@ -30,13 +39,29 @@
   <a class="callbtn" href="tel:+12509089208">📞 (250) 908-9208</a>
 </div></header>
 
-<section class="phero"><div class="wrap">
+<section class="phero"><div class="wrap phero-grid">
+  <div class="phero-copy">
   <div class="eyebrow">About Gauer Power</div>
   <h1>Local Electricians Who Give a Damn About the Work</h1>
   <p class="lead">Gauer Power is a Cranbrook-based electrical contractor: a local crew handling residential, commercial, and industrial work across the Kootenays.</p>
   <div class="cta-row">
     <a class="btn-primary" href="tel:+12509089208">📞 Call (250) 908-9208</a>
-    <a class="btn-ghost" href="#quote">Get a Free Quote</a>
+    <a class="btn-ghost" href="#hero-quote">Get a Free Quote</a>
+  </div>
+</div>
+  <div class="phero-form">
+    <div class="form-card" id="hero-quote">
+      <h3>Get a free quote</h3>
+      <p class="s">Tell us what's going on and you'll get a straight answer and a fair quote.</p>
+      <form class="quote-form" data-subject="New Gauer Power quote request (About - Hero)">
+        <input type="text" name="Name" placeholder="Your name" required>
+        <input type="tel" name="Phone" placeholder="Phone number" required>
+        <input type="text" name="Town" placeholder="Town" required>
+        <textarea name="Job" rows="2" placeholder="What do you need done?"></textarea>
+        <button type="submit">Get My Free Quote</button>
+      </form>
+      <p class="consent">By submitting this form you agree to receive SMS text messages from Gauer Power Ltd. about your enquiry, appointment updates, and service reminders. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="privacy.html" style="color:var(--gold)">Privacy Policy</a> and <a href="sms-terms.html" style="color:var(--gold)">SMS Terms</a>.</p>
+    </div>
   </div>
 </div></section>
 
@@ -62,7 +87,7 @@
   <div class="form-card">
     <h3>Want a crew you can count on?</h3>
     <p class="s">Tell us what's going on and you'll get a straight answer and a fair quote.</p>
-    <form id="quoteForm" data-subject="New Gauer Power quote request (About)">
+    <form id="quoteForm" class="quote-form" data-subject="New Gauer Power quote request (About)">
       <input type="text" name="Name" placeholder="Your name" required>
       <input type="tel" name="Phone" placeholder="Phone number" required>
       <input type="text" name="Town" placeholder="Town" required>

@@ -15,10 +15,26 @@ nav a{color:var(--mut);text-decoration:none;transition:color .15s}nav a:hover{co
 nav a.active{color:var(--gold)}
 .callbtn{background:var(--gold);color:var(--ink);font-weight:800;padding:12px 20px;border-radius:999px;text-decoration:none;font-size:15px;white-space:nowrap;box-shadow:0 0 0 1px rgba(223,189,102,.35),0 8px 24px -10px rgba(202,156,45,.6)}
 @media(max-width:900px){nav ul{display:none}}
+.nav{gap:12px}.brand{min-width:0;flex:0 1 auto}.brand img{max-width:100%}.callbtn{flex:0 0 auto}
 @media(max-width:560px){.brand img{height:28px}.callbtn{font-size:13px;padding:10px 13px}}
+@media(max-width:400px){.brand img{height:24px}.callbtn{font-size:12.5px;padding:10px 12px}}
+@media(max-width:360px){.wrap{padding:0 14px}.brand img{height:22px}.callbtn{font-size:12px;padding:9px 11px}}
 /* page hero */
 .phero{position:relative;padding:64px 0 48px;background:radial-gradient(1200px 520px at 78% -12%,rgba(202,156,45,.17),transparent 58%),linear-gradient(180deg,#0b0b0b,#0E0E0E)}
 @media(max-width:900px){.phero{padding:30px 0 40px}}
+/* optional real-photo backdrop: add class has-bg + inline --bg:url(file.jpg) on .phero.
+   Deliberately unused until full-res job photos land (no upscaled heroes). */
+.phero.has-bg::before{content:"";position:absolute;inset:0;background-image:var(--bg);background-size:cover;background-position:center;opacity:.28;z-index:0}
+.phero.has-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b0b0b 8%,rgba(11,11,11,.72) 52%,rgba(11,11,11,.45) 100%);z-index:0}
+.phero .wrap{position:relative;z-index:1}
+/* two-column page hero: copy left, quote card right */
+.phero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
+.phero-copy .lead{max-width:560px}
+.phero-form .form-card{margin:0;padding:26px}
+.phero-form .form-card h3{font-size:21px;margin:0 0 6px}
+.phero-form .form-card .s{font-size:14.5px;margin:0 0 16px}
+.phero-form .form-card .consent{font-size:10.5px;line-height:1.45;margin-top:12px}
+@media(max-width:980px){.phero-grid{grid-template-columns:1fr;gap:28px}.phero-copy .lead{max-width:none}}
 .eyebrow{display:inline-block;color:var(--gold);font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(202,156,45,.4);border-radius:999px;padding:8px 15px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 h1{font-size:clamp(32px,5vw,52px);line-height:1.02;margin:18px 0 15px;font-weight:900;letter-spacing:-1px}
 h1 .g{color:var(--gold)}
