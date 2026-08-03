@@ -1,8 +1,8 @@
 import os, re, sys, datetime
 
 D = os.path.expanduser("~/Desktop/apex_clients/aaron_gauer/static_site")
-BASE = sys.argv[1].rstrip("/") if len(sys.argv) > 1 else "https://johnacq.github.io/gauer-power-site"
-TODAY = "2026-07-31"
+BASE = sys.argv[1].rstrip("/") if len(sys.argv) > 1 else "https://www.gauerpower.ca"
+TODAY = "2026-08-03"
 
 PRIORITY = {"index.html":("1.0","weekly"),"gauer_residential.html":("0.9","monthly"),
   "gauer_commercial.html":("0.9","monthly"),"gauer_ev.html":("0.9","monthly"),
