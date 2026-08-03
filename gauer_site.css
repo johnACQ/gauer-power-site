@@ -24,7 +24,7 @@ nav a.active{color:var(--gold)}
 @media(max-width:900px){.phero{padding:30px 0 40px}}
 /* optional real-photo backdrop: add class has-bg + inline --bg:url(file.jpg) on .phero.
    Deliberately unused until full-res job photos land (no upscaled heroes). */
-.phero.has-bg::before{content:"";position:absolute;inset:0;background-image:var(--bg);background-size:cover;background-position:center;opacity:.28;z-index:0}
+.phero.has-bg::before{content:"";position:absolute;inset:0;background-image:var(--bg);background-size:cover;background-position:center;opacity:.42;z-index:0}
 .phero.has-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b0b0b 8%,rgba(11,11,11,.72) 52%,rgba(11,11,11,.45) 100%);z-index:0}
 .phero .wrap{position:relative;z-index:1}
 /* two-column page hero: copy left, quote card right */
