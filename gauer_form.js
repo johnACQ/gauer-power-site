@@ -45,32 +45,55 @@
     if(seen.indexOf(f)>-1)return; seen.push(f);
     var btn=f.querySelector('button');
     if(btn){btn.setAttribute('data-label',btn.textContent);}
+    // screen readers: fields only carry placeholders, so name them
+    Array.prototype.forEach.call(f.querySelectorAll('input,select,textarea'),function(i){
+      if(!(i.labels&&i.labels.length)&&!i.getAttribute('aria-label')&&i.placeholder){i.setAttribute('aria-label',i.placeholder)}
+    });
+    // honeypot: humans never see it, form-filling bots fill it
+    var hp=document.createElement('div');
+    hp.setAttribute('aria-hidden','true');
+    hp.style.cssText='position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden';
+    hp.innerHTML='<label>Leave this empty<input type="text" name="gp_hp" tabindex="-1" autocomplete="off"></label>';
+    f.appendChild(hp);
+    function done(){
+      var card=f.closest('.form-card')||f;
+      card.innerHTML='<h3 style="color:var(--gold)">Got it. We\'ll be in touch.</h3><p class="s" style="margin-bottom:0">Thanks for reaching out to Gauer Power. We\'ll call you back shortly. Need it sorted now? Tap to call <a href="tel:+12509089208" style="color:var(--gold);font-weight:800">(250) 908-9208</a>.</p>';
+    }
     f.addEventListener('submit',function(e){
       e.preventDefault();
       if(btn){btn.disabled=true;btn.textContent='Sending...';}
       var data={};new FormData(f).forEach(function(v,k){data[k]=v});
+      if(data.gp_hp){done();return;}
+      delete data.gp_hp;
       data._subject=f.getAttribute('data-subject')||'New Gauer Power quote request';
       data.Page=location.pathname;
       var attr=attribution();
       Object.keys(attr).forEach(function(k){data[k]=attr[k]});
-      // fast lane: instant Slack + SMS alert (fire-and-forget; email below is the backup)
+      // Two legs: the text to Aaron (Railway) and the email backup (FormSubmit).
+      // Either one landing means the lead reached someone, so show success then;
+      // only show the error if both fail.
+      var shown=false,failed=0;
+      function ok(){if(!shown){shown=true;done();}}
+      function fail(){
+        if(++failed<2||shown)return;
+        if(btn){btn.disabled=false;btn.textContent=btn.getAttribute('data-label')||'Get My Free Quote';}
+        alert('Something went wrong. Please call us at (250) 908-9208.');
+      }
       try{
         fetch(RAIL+'/webhook/gauer-lead',{
           method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,
           body:JSON.stringify({token:'gauer-bridge-lead-2026',name:data.Name,phone:data.Phone,
             town:data.Town,job:data.Job,page:location.pathname,attribution:attr})
-        }).catch(function(){});
-      }catch(e){}
+        }).then(function(r){if(!r.ok){throw new Error('rail '+r.status)}return r.json()})
+          .then(function(j){if(j&&j.ok===false){throw new Error('rail not ok')}ok()})
+          .catch(fail);
+      }catch(err){fail()}
       fetch('https://formsubmit.co/ajax/john@apexacq.co',{
         method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify(data)
-      }).then(function(r){if(!r.ok){throw new Error('send failed')}return r.json()}).then(function(){
-        var card=f.closest('.form-card');
-        card.innerHTML='<h3 style="color:var(--gold)">Got it. We\'ll be in touch.</h3><p class="s" style="margin-bottom:0">Thanks for reaching out to Gauer Power. We\'ll call you back shortly. Need it sorted now? Tap to call <a href="tel:+12509089208" style="color:var(--gold);font-weight:800">(250) 908-9208</a>.</p>';
-      }).catch(function(){
-        if(btn){btn.disabled=false;btn.textContent=btn.getAttribute('data-label')||'Get My Free Quote';}
-        alert('Something went wrong. Please call us at (250) 908-9208.');
-      });
+      }).then(function(r){if(!r.ok){throw new Error('send failed')}return r.json()})
+        .then(function(j){if(j&&String(j.success)==='false'){throw new Error('formsubmit not ok')}ok()})
+        .catch(fail);
     });
   });
 })();
