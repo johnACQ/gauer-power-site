@@ -88,7 +88,7 @@
           .then(function(j){if(j&&j.ok===false){throw new Error('rail not ok')}ok()})
           .catch(fail);
       }catch(err){fail()}
-      fetch('https://formsubmit.co/ajax/john@apexacq.co',{
+      fetch('https://formsubmit.co/ajax/aaron@gauerpower.ca',{
         method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify(data)
       }).then(function(r){if(!r.ok){throw new Error('send failed')}return r.json()})
